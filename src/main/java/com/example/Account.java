@@ -1,4 +1,4 @@
-﻿package com.example;
+package com.example;
 
-public class Account {
+public class Account extends Table {
 }
