@@ -12,7 +12,7 @@ public class HelloServlet extends HttpServlet {
     protected void doGet(jakarta.servlet.http.HttpServletRequest request, jakarta.servlet.http.HttpServletResponse response)
             throws jakarta.servlet.ServletException, java.io.IOException {
         Account account = new Account();
-        String message = account.GetMessage();
+        String message = account.getMessage();
 
         System.out.println(message);
         response.getWriter().println(message);

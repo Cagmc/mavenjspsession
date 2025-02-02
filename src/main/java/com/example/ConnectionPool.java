@@ -16,7 +16,7 @@ public class ConnectionPool {
         stringDictionary.put("Company-2", "company-2");
     }
 
-    public static String GetConnection() {
+    public static String getConnection() {
         System.out.println("GetConnection");
         SessionManager sessionManager = CDI.current().select(SessionManager.class).get();
         String tenantId = sessionManager.getTenantId();

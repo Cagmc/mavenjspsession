@@ -2,8 +2,8 @@ package com.example;
 
 public abstract class Table {
 
-    public String GetMessage() {
-        String connection = ConnectionPool.GetConnection();
+    public String getMessage() {
+        String connection = ConnectionPool.getConnection();
 
         return String.format("Hello %s!", connection);
     }
