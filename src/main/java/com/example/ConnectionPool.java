@@ -17,9 +17,17 @@ public class ConnectionPool {
     }
 
     public String GetConnection() {
-        //SessionManager sessionManager = CDI.current().select(SessionManager.class).get();
-        //String tenantId = sessionManager.getTenantId();
-        String tenantId = ThreadStorage.getThreadLocalVariable().get();
+        SessionManager sessionManager = CDI.current().select(SessionManager.class).get();
+        String tenantId = sessionManager.getTenantId();
+        //String tenantId = ThreadStorage.getThreadLocalVariable().get();
+
+        return stringDictionary.get(tenantId);
+    }
+
+    public static String GetConnectionStatic() {
+        SessionManager sessionManager = CDI.current().select(SessionManager.class).get();
+        String tenantId = sessionManager.getTenantId();
+        //String tenantId = ThreadStorage.getThreadLocalVariable().get();
 
         return stringDictionary.get(tenantId);
     }

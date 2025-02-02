@@ -1,5 +1,6 @@
 package com.example;
 
+import jakarta.enterprise.inject.spi.CDI;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 

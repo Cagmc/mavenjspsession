@@ -1,7 +1,10 @@
 package com.example;
 
+import jakarta.enterprise.context.SessionScoped;
+
 import java.io.Serializable;
 
+@SessionScoped
 public class SessionManager implements Serializable {
 
     private static final long serialVersionUID = 1L;
