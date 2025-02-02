@@ -16,18 +16,14 @@ public class ConnectionPool {
         stringDictionary.put("Company-2", "company-2");
     }
 
-    public String GetConnection() {
+    public static String GetConnection() {
+        System.out.println("GetConnection");
         SessionManager sessionManager = CDI.current().select(SessionManager.class).get();
         String tenantId = sessionManager.getTenantId();
-        //String tenantId = ThreadStorage.getThreadLocalVariable().get();
+        System.out.println("Tenant ID: " + tenantId);
 
-        return stringDictionary.get(tenantId);
-    }
-
-    public static String GetConnectionStatic() {
-        SessionManager sessionManager = CDI.current().select(SessionManager.class).get();
-        String tenantId = sessionManager.getTenantId();
-        //String tenantId = ThreadStorage.getThreadLocalVariable().get();
+        String threadTenantId = ThreadStorage.getThreadLocalVariable().get();
+        System.out.println("Thread Tenant ID: " + threadTenantId);
 
         return stringDictionary.get(tenantId);
     }
